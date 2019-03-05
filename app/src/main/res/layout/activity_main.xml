@@ -52,7 +52,7 @@ skdflkewrwerksjdflkj"
                 android:text="OnLine" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/btnOffline"
                 android:layout_marginLeft="100dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
