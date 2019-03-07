@@ -13,9 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".exam_ofline"
+            android:label="@string/title_activity_exam_ofline"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Task"
+            android:label="@string/title_activity_task"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".weekly"
+            android:label="@string/title_activity_weekly"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Exam" />
+        <activity
             android:name=".dashboard_offline"
             android:label="@string/title_activity_dashboard_offline"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
