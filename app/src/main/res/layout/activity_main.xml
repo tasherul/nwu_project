@@ -22,19 +22,7 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="lksdfjlksdjflkasdjaflkdsjlkdsjflksdjflksdjflksadjflksdjflksdfslkdfsdlkfklsdfalsdkfjlkadsjflksdjflksdjflkasdjflkasdjflksdjflksadjflksdjfldskjfskdljfkldjfkldfjsdklfj skdfjklsdjfskadljf kdsfjklsdfjklasdfkldsf ksdjfkldsjfd sdkfjkldfj ksadfjkldfj sdsfjkldfj sdkfjslf sdfjkldfj sdkfjd fksjfl sfkjflksdf skfjdklflksdfjkldfjklasdflkdflkdsjfkdfjkld fdsjfkldf dkfjklf ksdjfklsadf dfj
-dsklfkldfkldsfldf
-sdflkjslfkjsadlfjdlfkdlkfjdsf
-sskldsfjlskfdjlksflkdf
-sdkfklsjdflksdjf
-sdflksdjflsdf
-sdkkflksjf slkdjf
-sdfslfdjskdlfj
-sdfklsjflksjdflksdf
-sdkfjlsdkjflksdjfsdf
-sdkflsdkfjskdjf
-sdfjlksddjfklsdjfklsdfjlknvlskjdfiweriweflskdjf
-skdflkewrwerksjdflkj"
+            android:text="The schedule management plan is created as a part of Develop Management Plan process in Integration Management. A project manager must create a schedule management plan and it is observed that in real-world scenarios most of the project managers miss on this important aspect. A schedule management plan should include the methodology used to create the schedule. The project manager should also describe the use of scheduling software. He should identify the measurement guidelines i.e. should he measure the process progress in hours, days, weeks, months or quarters"
 
 
             />
@@ -44,19 +32,18 @@ skdflkewrwerksjdflkj"
             android:gravity="center"
             android:orientation="vertical">
 
+
             <Button
                 android:id="@+id/button"
                 android:layout_width="100dp"
-                android:layout_height="wrap_content"
-
+                android:layout_height="60dp"
                 android:text="OnLine" />
 
             <Button
                 android:id="@+id/btnOffline"
                 android:layout_marginLeft="100dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
+                android:layout_height="60dp"
                 android:text="OffLine" />
         </RelativeLayout>
 
