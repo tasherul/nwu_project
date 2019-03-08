@@ -13,9 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".settings_offline"
+            android:label="@string/title_activity_settings_offline"></activity>
+        <activity
             android:name=".exam_ofline"
             android:label="@string/title_activity_exam_ofline"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Task"
             android:label="@string/title_activity_task"
