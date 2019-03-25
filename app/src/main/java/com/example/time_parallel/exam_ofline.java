@@ -1,5 +1,6 @@
 package com.example.time_parallel;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -83,11 +84,19 @@ public class exam_ofline extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            Intent in = new Intent(this, dashboard_offline.class);
+            startActivity(in);
+
         } else if (id == R.id.nav_gallery) {
+            Intent in = new Intent(this, weekly.class);
+            startActivity(in);
 
         } else if (id == R.id.nav_slideshow) {
-
+            Intent in = new Intent(this, exam_ofline.class);
+            startActivity(in);
+        } else if (id == R.id.nav_manage) {
+            Intent in = new Intent(this, Task.class);
+            startActivity(in);
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

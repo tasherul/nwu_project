@@ -33,18 +33,18 @@
             android:orientation="vertical">
 
 
-            <Button
+     <!--       <Button
                 android:id="@+id/button"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:text="OnLine" />
+                android:text="OnLine" /> -->
 
             <Button
                 android:id="@+id/btnOffline"
-                android:layout_marginLeft="100dp"
+
                 android:layout_width="wrap_content"
                 android:layout_height="60dp"
-                android:text="OffLine" />
+                android:text="Open Apps" />
         </RelativeLayout>
 
 
