@@ -83,4 +83,16 @@
     <string name="pref_ringtone_silent">Silent</string>
 
     <string name="pref_title_vibrate">Vibrate</string>
+    <string name="exam">Exam</string>
+    <string name="textview">Name</string>
+    <string name="name">Name</string>
+    <string-array name="commobox">
+        <item>Satarday</item>
+        <item>Ssunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Weadnesday</item>
+        <item>Thuseday</item>
+        <item>Friday</item>
+    </string-array>
 </resources>

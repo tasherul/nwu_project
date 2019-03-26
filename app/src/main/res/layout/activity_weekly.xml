@@ -21,5 +21,17 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_dashboard_offline"
         app:menu="@menu/activity_dashboard_offline_drawer" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time Parallel" />
+
+
+    </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
