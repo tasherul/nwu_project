@@ -22,4 +22,6 @@
         app:headerLayout="@layout/nav_header_dashboard_offline"
         app:menu="@menu/activity_dashboard_offline_drawer" />
 
+
+
 </androidx.drawerlayout.widget.DrawerLayout>
