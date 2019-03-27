@@ -7,34 +7,5 @@
     tools:context=".Exam">
 
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/textview"
-        android:paddingTop="10dp"/>
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:inputType="textPersonName" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Combobox"
-        android:paddingTop="50dp"/>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="100dp"
-        android:paddingLeft="100dp"
-        android:entries="@array/commobox"/>
 </RelativeLayout>

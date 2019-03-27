@@ -86,13 +86,24 @@
     <string name="exam">Exam</string>
     <string name="textview">Name</string>
     <string name="name">Name</string>
+    <string name="title">Title</string>
     <string-array name="commobox">
-        <item>Satarday</item>
-        <item>Ssunday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
         <item>Monday</item>
         <item>Tuesday</item>
-        <item>Weadnesday</item>
-        <item>Thuseday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
         <item>Friday</item>
     </string-array>
+    <string name="discription">Discription :</string>
+    <string name="title_add">Title :</string>
+    <string name="title_add2">Enter Your Title</string>
+    <string name="discription2">Enter Your Discription</string>
+    <string name="weekly">Day :</string>
+    <string name="srt_time">Start Time :</string>
+    <string name="end_time">End Time :</string>
+    <string name="srt_time_add">Press The Button</string>
+    <string name="end_time_add">End Time :</string>
+
 </resources>
