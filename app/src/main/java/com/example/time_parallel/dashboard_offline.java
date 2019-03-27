@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -113,6 +114,10 @@ public class dashboard_offline extends AppCompatActivity
         return true;
     }
 
+    public void MessageShow(String Massege)
+    {
+        Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
+    }
 
 
 }

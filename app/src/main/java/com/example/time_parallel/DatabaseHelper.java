@@ -17,14 +17,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
 
-    private static final String TABLE_NAME = "people_table";
+    private static final String TABLE_NAME = "TimeTableManagement";
     private static final String ID = "ID";
     private static final String Title = "Title";
     private static final String Discription   =  "Discription";
     private static final String Weekly = "TimeTable";
     private static final String StartTime = "TimeTable";
     private static final String Endtime = "TimeTable";
-
+    private static final String Type = "TimeTable";
+    private static final String SDate = "SDate";
     public DatabaseHelper(Context context) {
         super(context, TABLE_NAME, null, 1);
     }
@@ -33,7 +34,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTable =   "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + Title +" varchar(500)   , " + Discription +" varchar(1000)  , "+ Weekly +" varchar(500) " +
-                ",  "+ StartTime + " varchar(500),  "+ Endtime + " varchar(500)    )";
+                ",  "+ StartTime + " varchar(500),  "+ Endtime + " varchar(500),   "+ Type +  " varchar(500) , "+ SDate +   " varchar(500) )";
         db.execSQL(createTable);
     }
 
@@ -43,16 +44,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item) {
+    public boolean addData(String title,String discription,String weekly,String startTime, String endtime, String type, String sDate) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(Title, item);
-
-        Log.d(TAG, "addData: Adding " + item + " to " + TABLE_NAME);
+        contentValues.put(Title, title);
+        contentValues.put(Discription, discription);
+        contentValues.put(Weekly, weekly);
+        contentValues.put(StartTime, startTime);
+        contentValues.put(Endtime, endtime);
+        contentValues.put(Type, type);
+        contentValues.put(SDate, sDate);
+        Log.d(TAG, "addData: Adding a Schedule" );
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-        //if date as inserted incorrectly it will return -1
+         //if date as inserted incorrectly it will return -1
         if (result == -1) {
             return false;
         } else {
@@ -73,13 +79,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Returns only the ID that matches the name passed in
-     * @param name
+
      * @return
      */
-    public Cursor getItemID(String name){
+    public Cursor getItemID(String ID){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT " + ID + " FROM " + TABLE_NAME +
-                " WHERE " + Title + " = '" + name + "'";
+        String query = "SELECT * FROM " + TABLE_NAME +
+                " WHERE ID=" + ID ;
         Cursor data = db.rawQuery(query, null);
         return data;
     }
@@ -103,17 +109,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     /**
      * Delete from database
      * @param id
-     * @param name
+     *  @param
      */
-    public void deleteName(int id, String name){
+    public void deleteName(int id ){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE "
-                + ID + " = '" + id + "'" +
-                " AND " + Title + " = '" + name + "'";
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE ID="  + ID ;
         Log.d(TAG, "deleteName: query: " + query);
-        Log.d(TAG, "deleteName: Deleting " + name + " from database.");
+        //Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);
     }
+ /**
+     public void MessageShow(String Massege)
+    {
+        Toast.makeText(this, Massege, Toast.LENGTH_SHORT).show();
+    }
+    */
+
 
 }
 
