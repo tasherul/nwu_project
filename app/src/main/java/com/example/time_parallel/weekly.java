@@ -80,6 +80,8 @@ public class weekly extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
@@ -91,7 +93,7 @@ public class weekly extends AppCompatActivity
             startActivity(in);
 
         } else if (id == R.id.nav_slideshow) {
-            Intent in = new Intent(this, exam_ofline.class);
+            Intent in = new Intent(this, Main_add_exam.class);
             startActivity(in);
         } else if (id == R.id.nav_manage) {
             Intent in = new Intent(this, Task.class);

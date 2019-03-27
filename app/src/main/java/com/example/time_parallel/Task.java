@@ -87,14 +87,14 @@ public class Task extends AppCompatActivity
             startActivity(in);
 
         } else if (id == R.id.nav_gallery) {
-            Intent in = new Intent(this, weekly.class);
+            Intent in = new Intent(this, Main_add.class);
             startActivity(in);
 
         } else if (id == R.id.nav_slideshow) {
-            Intent in = new Intent(this, exam_ofline.class);
+            Intent in = new Intent(this, Main_add_exam.class);
             startActivity(in);
         } else if (id == R.id.nav_manage) {
-            Intent in = new Intent(this, Task.class);
+            Intent in = new Intent(this, Main_add_exam.class);
             startActivity(in);
         } else if (id == R.id.nav_share) {
 

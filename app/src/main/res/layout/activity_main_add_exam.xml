@@ -7,7 +7,7 @@
     tools:context=".Main_add_exam"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
-    android:paddingTop="200dp"
+    android:paddingTop="20dp"
     android:layout_gravity="center"
     android:background="@color/design_default_color_primary">
     <TextView
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/srt_time_add"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="178dp"
+        android:layout_marginLeft="120dp"
         android:inputType="textPersonName"
         android:layout_below="@+id/weekly"
         android:layout_marginTop="30dp"
@@ -115,7 +115,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/end_time_add"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="178dp"
+        android:layout_marginLeft="120dp"
         android:inputType="textPersonName"
         android:layout_below="@+id/srt_time_add"
         android:layout_marginTop="30dp"
@@ -147,7 +147,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/end_time_add"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="178dp"
+        android:layout_marginLeft="120dp"
         />
 
 
