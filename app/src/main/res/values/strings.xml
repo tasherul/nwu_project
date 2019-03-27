@@ -105,5 +105,6 @@
     <string name="end_time">End Time :</string>
     <string name="srt_time_add">Press The Button</string>
     <string name="end_time_add">End Time :</string>
+    <string name="date">dd/mm/yy</string>
 
 </resources>

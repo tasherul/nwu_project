@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main_add"></activity>
+        <activity android:name=".Main_add_exam"></activity>
+        <activity android:name=".Main_add" />
         <activity
             android:name=".exam_ofline"
             android:label="@string/title_activity_exam_ofline"
