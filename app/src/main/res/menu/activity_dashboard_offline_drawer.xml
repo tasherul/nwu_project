@@ -29,7 +29,7 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_settings_black_24dp"
-                android:title="Sitting" />
+                android:title="Settings" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_live_help_black_24dp"

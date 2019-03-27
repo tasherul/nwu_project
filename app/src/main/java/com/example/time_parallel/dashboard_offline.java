@@ -2,37 +2,45 @@ package com.example.time_parallel;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.DialogFragment;
+
 
 public class dashboard_offline extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, TimePickerDialog.OnTimeSetListener
         {
 
+            DatabaseHelper mDatabaseHelper;
+            ListView mListView;
+            private static final String TAG = "ListDataActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard_offline);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+/*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +49,7 @@ public class dashboard_offline extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
+*/
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -55,12 +63,71 @@ public class dashboard_offline extends AppCompatActivity
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DialogFragment timePicker = new TimePickerFragment();
-                timePicker.show( getSupportFragmentManager(), "time picker") ;
+               // DialogFragment timePicker = new TimePickerFragment();
+               // timePicker.show( getSupportFragmentManager(), "time picker") ;
+
+                sama();
+
             }
         });
 
+        mListView = (ListView) findViewById(R.id.listView);
+        mDatabaseHelper = new DatabaseHelper(this);
 
+        populateListView();
+
+    }
+
+    private void populateListView() {
+                 Log.d(TAG, "populateListView: Displaying data in the ListView.");
+
+                //get the data and append to a list
+                Cursor data = mDatabaseHelper.getData();
+                ArrayList<String> listData = new ArrayList<>();
+                
+                while(data.moveToNext()){
+                    //get the value from the database in column 1
+                    //then add it to the ArrayList
+                    listData.add(data.getString(1));
+
+                }
+                //create the list adapter and set the adapter
+                ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1    , listData);
+                mListView.setAdapter(adapter);
+
+
+
+               /*
+                //set an onItemClickListener to the ListView
+                mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        String name = adapterView.getItemAtPosition(i).toString();
+                        Log.d(TAG, "onItemClick: You Clicked on " + name);
+
+                        Cursor data = mDatabaseHelper.getItemID(name); //get the id associated with that name
+                        int itemID = -1;
+                        while(data.moveToNext()){
+                            itemID = data.getInt(0);
+                        }
+                        if(itemID > -1){
+                           // Log.d(TAG, "onItemClick: The ID is: " + itemID);
+                           // Intent editScreenIntent = new Intent(ListDataActivity.this, EditDataActivity.class);
+                           // editScreenIntent.putExtra("id",itemID);
+                            //editScreenIntent.putExtra("name",name);
+                            //startActivity(editScreenIntent);
+                        }
+                        else{
+                            toastMessage("No ID associated with that name");
+                        }
+                    }
+                });
+               * */
+            }
+    public void sama()
+    {
+        Intent in = new Intent(this, Main_add.class);
+        startActivity(in);
     }
 
             @Override
@@ -141,6 +208,8 @@ public class dashboard_offline extends AppCompatActivity
     {
         Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
     }
-
+            private void toastMessage(String message){
+                Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+            }
 
 }

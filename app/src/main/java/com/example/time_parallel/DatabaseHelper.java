@@ -17,17 +17,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String TAG = "DatabaseHelper";
 
+    private  static final String DataBaseName = "TimeParallel.db";
     private static final String TABLE_NAME = "TimeTableManagement";
     private static final String ID = "ID";
     private static final String Title = "Title";
     private static final String Discription   =  "Discription";
-    private static final String Weekly = "TimeTable";
-    private static final String StartTime = "TimeTable";
-    private static final String Endtime = "TimeTable";
-    private static final String Type = "TimeTable";
+    private static final String Weekly = "Weekly";
+    private static final String StartTime = "StartTime";
+    private static final String Endtime = "Endtime";
+    private static final String Type = "Type";
     private static final String SDate = "SDate";
     public DatabaseHelper(Context context) {
-        super(context, TABLE_NAME, null, 1);
+
+        super(context, DataBaseName, null, 1);
+         //SQLiteDatabase db  = this.getWritableDatabase();
     }
 
     @Override
@@ -46,6 +49,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean addData(String title,String discription,String weekly,String startTime, String endtime, String type, String sDate) {
         SQLiteDatabase db = this.getWritableDatabase();
+        //onCreate(db);
         ContentValues contentValues = new ContentValues();
         contentValues.put(Title, title);
         contentValues.put(Discription, discription);

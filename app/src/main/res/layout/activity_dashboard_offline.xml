@@ -9,23 +9,23 @@
     tools:openDrawer="start">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
+        <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            android:text="time"
-            android:textSize="30sp"
-            />
+            android:id="@+id/listView"/>
+
 
         <Button
             android:id="@+id/button"
             android:layout_width="100dp"
+            android:layout_marginTop="200dp"
             android:layout_height="100dp"
             android:text="open time picker" />
+
     </LinearLayout>
 
 
