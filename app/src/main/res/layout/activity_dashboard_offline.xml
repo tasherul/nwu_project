@@ -8,6 +8,27 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView"
+            android:text="time"
+            android:textSize="30sp"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="open time picker" />
+    </LinearLayout>
+
+
     <include
         layout="@layout/app_bar_dashboard_offline"
         android:layout_width="match_parent"
