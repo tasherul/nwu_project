@@ -103,7 +103,7 @@
     <string name="weekly">Day :</string>
     <string name="srt_time">Start Time :</string>
     <string name="end_time">End Time :</string>
-    <string name="srt_time_add">Press The Button</string>
+    <string name="srt_time_add">Start Time</string>
     <string name="end_time_add">End Time :</string>
     <string name="date">dd/mm/yy</string>
     <string name="txtview1">Title</string>
