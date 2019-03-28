@@ -81,12 +81,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
     public Cursor getDataByType(String Types){
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME +" WHERE Type='" +Types+"'";
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
+
     /**
      * Returns only the ID that matches the name passed in
 

@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,6 +33,9 @@ public class weekly extends AppCompatActivity
     {
         _Schedule=Schedule;
     }
+    private ListView lvProduct;
+    private ScheduleListAdapter adapter;
+    private List<Schedul> mProductList;
 
     DatabaseHelper mDatabaseHelper;
     ListView mListView;
@@ -42,10 +46,10 @@ public class weekly extends AppCompatActivity
 
         mDatabaseHelper = new DatabaseHelper(this);
 
-        mListView = (ListView) findViewById(R.id.listView_Weekly );
-        ShowGridViewData();
+        mListView = (ListView) findViewById(R.id.listview_product );
+        //ShowGridViewData();
 
-
+        ShowProductData();
 
 
         //-----------------------------------------------------
@@ -73,6 +77,46 @@ public class weekly extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+    private void ShowProductData() {
+        lvProduct = (ListView)findViewById(R.id.listview_product);
+        mProductList = new ArrayList<>();
+        Cursor data = mDatabaseHelper.getDataByType(_Schedule);
+
+        while(data.moveToNext()){
+            //get the value from the database in column 1
+            //then add it to the ArrayList
+            String ID =data.getString(0);
+            String Title =data.getString(1);
+            String Discription =data.getString(2);
+            String Weekly = data.getString(3);
+            String StartTime = data.getString(4);
+            String EndTime = data.getString(5);
+            String Type =data.getString(6);
+            String SDate =data.getString(7);
+            mProductList.add(new Schedul(ID,Title,Discription,Weekly,StartTime,EndTime,Type,SDate));
+        }
+        adapter = new ScheduleListAdapter(getApplicationContext(), mProductList);
+        lvProduct.setAdapter(adapter);
+        lvProduct.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Do something
+                //Ex: display msg with product id get from view.getTag
+                String ID  = view.getTag().toString();
+                Show SW = new Show();
+                SW.Show(ID);
+                OpenShowFile();
+
+            }
+        });
+    }
+
+    public void OpenShowFile()
+    {
+        Intent in = new Intent(this, Show.class);//Weekly page
+        startActivity(in);
+
+    }
     private void ShowGridViewData() {
         Cursor data = mDatabaseHelper.getDataByType(_Schedule);
         //Cursor data = mDatabaseHelper.getData();
@@ -93,12 +137,13 @@ public class weekly extends AppCompatActivity
         //create the list adapter and set the adapter
         ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1      , listData    );
         mListView.setAdapter(adapter);
-
+        mListView.setTag(IDs);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String name = parent.getItemAtPosition(position).toString();
 
+                //MessageShow(parent.getTag(position).toString() );
             }
         });
 

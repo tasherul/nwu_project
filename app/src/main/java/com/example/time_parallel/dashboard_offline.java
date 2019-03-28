@@ -231,9 +231,9 @@ public class dashboard_offline extends AppCompatActivity
     }
 
     public void MessageShow(String Massege)
-    {
-        Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
-    }
+        {
+            Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
+        }
             private void toastMessage(String message){
                 Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
             }
