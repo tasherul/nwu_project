@@ -187,13 +187,15 @@ public class dashboard_offline extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) {
-            Intent in = new Intent(this, Main_add_exam.class);//Exam Pae
+            Intent in = new Intent(this,  Main_add_exam.class );
+            Main_add_exam  m = new Main_add_exam();
+            m.Main_add_exam("Exam");
             startActivity(in);
-
         } else if (id == R.id.nav_manage) {
             Intent in = new Intent(this, Main_add_exam.class );
+            Main_add_exam  m = new Main_add_exam();
+            m.Main_add_exam("Task");
             startActivity(in);
-
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
