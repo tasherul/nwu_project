@@ -18,6 +18,8 @@
         android:text="@string/title_add"
         android:layout_alignParentLeft="true"
         android:paddingTop="10dp"
+        android:textColor="#fff"
+        android:textStyle="bold"
         />
     <EditText
         android:id="@+id/title_add2"
@@ -26,6 +28,7 @@
         android:hint="@string/title_add2"
         android:layout_alignParentRight="true"
         android:inputType="textPersonName"
+        android:textColor="#fff"
 
         />
     <TextView
@@ -36,6 +39,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
         android:layout_below="@+id/title_add2"
+        android:textColor="#fff"
+        android:textStyle="bold"
 
         />
     <EditText
@@ -46,6 +51,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/title_add2"
         android:inputType="textMultiLine"
+        android:textColor="#fff"
+
 
         />
     <TextView
@@ -56,6 +63,8 @@
         android:layout_alignParentLeft="true"
         android:layout_marginTop="10dp"
         android:layout_below="@+id/discription2"
+        android:textColor="#fff"
+        android:textStyle="bold"
 
         />
 
@@ -67,6 +76,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
         android:entries="@array/commobox"
+        android:textColor="#fff"
         />
     <TextView
         android:id="@+id/srt_time"
@@ -75,7 +85,10 @@
         android:text="@string/srt_time"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/weekly"/>
+        android:layout_below="@+id/weekly"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        />
     <EditText
         android:id="@+id/srt_time_add"
         android:layout_width="145dp"
@@ -87,6 +100,7 @@
         android:layout_below="@+id/weekly"
         android:layout_marginTop="30dp"
         android:enabled="false"
+        android:textColor="#fff"
         />
 
     <Button
@@ -106,7 +120,10 @@
         android:text="@string/end_time"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/srt_time_add"/>
+        android:layout_below="@+id/srt_time_add"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        />
 
     <EditText
         android:id="@+id/end_time_add"
@@ -119,6 +136,7 @@
         android:layout_below="@+id/srt_time_add"
         android:layout_marginTop="30dp"
         android:enabled="false"
+        android:textColor="#fff"
         />
 
     <Button
