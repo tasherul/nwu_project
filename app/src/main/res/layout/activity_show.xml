@@ -36,7 +36,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/discription"
+        android:text="Day"
         android:layout_below="@id/show_txt2"
         android:layout_alignParentLeft="true"
 
@@ -59,7 +59,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Day"
+        android:text="@string/srt_time_add"
         android:layout_below="@id/show_txt4"
         android:layout_alignParentLeft="true"
 
@@ -82,7 +82,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/discription"
+        android:text="@string/end_time"
         android:layout_below="@id/show_txt6"
         android:layout_alignParentLeft="true"
 
@@ -101,14 +101,36 @@
         android:textColor="#fff"
 
         />
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discription"
+        android:layout_below="@id/show_txt8"
+        android:layout_alignParentLeft="true"
 
+        android:textColor="#fff"
+
+        />
+    <TextView
+        android:id="@+id/show_txt10"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:text="d"
+        android:layout_below="@id/show_txt8"
+
+        android:layout_alignParentRight="true"
+
+        android:textColor="#fff"
+
+        />
     <Button
         android:id="@+id/btnBack"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:text="Edit"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/show_txt8"
+        android:layout_below="@+id/show_txt10"
         android:layout_marginTop="30dp"
         />
     <Button
@@ -117,7 +139,7 @@
         android:layout_height="50dp"
         android:text="Delete"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/show_txt8"
+        android:layout_below="@+id/show_txt10"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="100dp"
         />
