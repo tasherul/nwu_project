@@ -1,11 +1,18 @@
 package com.example.time_parallel;
 
+
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,13 +20,26 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+
+
 public class weekly extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    DatabaseHelper mDatabaseHelper;
+    ListView mListView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weekly);
+
+        mDatabaseHelper = new DatabaseHelper(this);
+
+        mListView = (ListView) findViewById(R.id.listView_Weekly );
+        ShowGridViewData();
+
+
+
+
+        //-----------------------------------------------------
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -43,6 +63,30 @@ public class weekly extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+    private void ShowGridViewData() {
+        Cursor data = mDatabaseHelper.getData();
+        ArrayList<String> listData = new ArrayList<>();
+
+        while(data.moveToNext()){
+            //get the value from the database in column 1
+            //then add it to the ArrayList
+            String Title =data.getString(1);
+            String Day = data.getString(3);
+            String StartTime = data.getString(4);
+            String EndTime = data.getString(5);
+
+            listData.add( "Title : "+  Title + "\n"+"Day : "+Day+"\nTime : "+StartTime+" to "+EndTime+"\n");
+
+        }
+        //create the list adapter and set the adapter
+        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1      , listData  );
+
+        mListView.setAdapter(adapter);
+
+
+    }
+
 
     @Override
     public void onBackPressed() {
