@@ -124,9 +124,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      * @param id
      *  @param
      */
-    public void deleteName(int id ){
+    public void DeleteData(String  id ){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "DELETE FROM " + TABLE_NAME + " WHERE ID="  + ID ;
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE ID="  + id ;
         Log.d(TAG, "deleteName: query: " + query);
         //Log.d(TAG, "deleteName: Deleting " + name + " from database.");
         db.execSQL(query);

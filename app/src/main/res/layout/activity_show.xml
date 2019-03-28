@@ -12,24 +12,14 @@
     android:background="@color/design_default_color_primary"
     >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_add"
-        android:layout_alignParentLeft="true"
-        android:paddingTop="10dp"
-        android:textColor="#fff"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        />
+
     <TextView
         android:id="@+id/show_txt2"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
        android:text="d"
         android:paddingTop="10dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
         android:textStyle="bold"
         android:textColor="#fff"
         android:textSize="25sp"
@@ -42,7 +32,7 @@
         android:text="Day"
         android:layout_below="@id/show_txt2"
         android:layout_alignParentLeft="true"
-
+        android:paddingTop="10dp"
         android:textColor="#fff"
 
         />
@@ -52,7 +42,7 @@
         android:layout_height="wrap_content"
         android:text="d"
         android:layout_below="@id/show_txt2"
-
+        android:paddingTop="10dp"
         android:layout_alignParentRight="true"
 
         android:textColor="#fff"
@@ -128,7 +118,7 @@
 
         />
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnEdit"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Edit"
@@ -138,7 +128,7 @@
         android:drawableLeft="@drawable/edit"
         />
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnDelete"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Delete"

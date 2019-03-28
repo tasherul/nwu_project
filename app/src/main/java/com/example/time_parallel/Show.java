@@ -1,8 +1,12 @@
 package com.example.time_parallel;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +14,12 @@ public class Show extends AppCompatActivity {
 
     public static String DataID;
     DatabaseHelper mDatabaseHelper;
+
     public void Show(String ID)
     {
         DataID  = ID;
     }
-
+    static String Type_For_Goto_page;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,17 +57,61 @@ public class Show extends AppCompatActivity {
             {
                 Week_or_Date.setText(_Weekly);
                 DayName.setText("Date");
+                Type_For_Goto_page=_Type;
             }
             else
             {
                 Week_or_Date.setText(_SDate);
                 DayName.setText("Day");
+                Type_For_Goto_page=_Type;
             }
 
             break;
         }
 
+        Button btnEdit,btnDelete;
+        btnEdit=(Button)findViewById(R.id.btnEdit);
+        btnDelete=(Button)findViewById(R.id.btnDelete);
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mDatabaseHelper.DeleteData(DataID);
+                MessageShow("This Schedule is Delete");
 
 
+                if(Type_For_Goto_page!="Schedule")
+                {
+                    weekly _week = new weekly();
+                   _week.weekly(Type_For_Goto_page);
+                    OpenPageSchdule();
+                }
+                else
+                {
+
+                    weekly _week = new weekly();
+                    _week.weekly(Type_For_Goto_page);
+                    OpenPageSchdule();
+                }
+
+            }
+        });
+
+
+
+
+
+    }
+
+    public void OpenPageSchdule()
+    {
+        Intent in = new Intent(this, weekly.class);//Weekly page
+        startActivity(in);
+
+    }
+
+    public void MessageShow(String Massege)
+    {
+        Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
     }
 }
