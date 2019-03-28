@@ -6,9 +6,12 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -24,6 +27,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 public class weekly extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+       static  String _Schedule;
+    public void weekly(String Schedule)
+    {
+        _Schedule=Schedule;
+    }
+
     DatabaseHelper mDatabaseHelper;
     ListView mListView;
     @Override
@@ -65,9 +74,10 @@ public class weekly extends AppCompatActivity
     }
 
     private void ShowGridViewData() {
-        Cursor data = mDatabaseHelper.getData();
+        Cursor data = mDatabaseHelper.getDataByType(_Schedule);
+        //Cursor data = mDatabaseHelper.getData();
         ArrayList<String> listData = new ArrayList<>();
-
+        ArrayList<Integer> IDs = new ArrayList<>();
         while(data.moveToNext()){
             //get the value from the database in column 1
             //then add it to the ArrayList
@@ -75,18 +85,30 @@ public class weekly extends AppCompatActivity
             String Day = data.getString(3);
             String StartTime = data.getString(4);
             String EndTime = data.getString(5);
-
-            listData.add( "Title : "+  Title + "\n"+"Day : "+Day+"\nTime : "+StartTime+" to "+EndTime+"\n");
-
+            String ID =data.getString(0);
+            listData.add( "Title : "+  Title + "\n"+"Day : "+Day+"\nTime : "+StartTime+" to "+EndTime+"\n  #   "+ID );
+            IDs.add(Integer.parseInt(ID));
         }
+
         //create the list adapter and set the adapter
-        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1      , listData  );
+        ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1      , listData    );
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String name = parent.getItemAtPosition(position).toString();
+
+            }
+        });
 
 
     }
 
-
+    public void MessageShow(String Massege)
+    {
+        Toast.makeText(this , Massege, Toast.LENGTH_SHORT).show();
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

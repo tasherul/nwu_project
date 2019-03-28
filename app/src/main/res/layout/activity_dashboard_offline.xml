@@ -6,27 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+
+   >
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:orientation="vertical"
+        android:paddingLeft="90dp"
+        android:paddingTop="90dp"
+        >
 
 
         <Button
             android:id="@+id/button"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="200dp"
-            android:text="open time picker"
-            />
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="Show Weekly Schedule"
+             android:drawableLeft="@drawable/view_list"
 
+
+            />
+        <Button
+            android:id="@+id/btnExam"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Show Exam Schedule"
+            android:drawableLeft="@drawable/view_list1"
+            />
+        <Button
+            android:id="@+id/btnTask"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Show Task Schedule"
+            android:drawableLeft="@drawable/view_list2"
+            />
     </LinearLayout>
 
 

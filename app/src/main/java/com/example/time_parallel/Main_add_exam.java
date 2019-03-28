@@ -93,6 +93,7 @@ public static String Show;
                 EndTime.setText("");
                 Title.setText("");
                 Discription.setText("");
+                Date.setText("");
             }
             else
                 toastMessage("Error Data Can't Add.");
@@ -120,13 +121,13 @@ public static String Show;
         if(B_StartTime)
         {
             TextView textView = (TextView)findViewById(R.id.txtStartTime );
-            textView.setText(hourOfDay+" : "+minute);
+            textView.setText(hourOfDay+":"+minute);
         }
 
         if(B_EndTime)
         {
             TextView textView = (TextView)findViewById(R.id.end_time_add   );
-            textView.setText(hourOfDay+" : "+minute);
+            textView.setText(hourOfDay+":"+minute);
         }
     }
 }

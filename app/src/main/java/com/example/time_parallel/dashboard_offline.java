@@ -58,26 +58,49 @@ public class dashboard_offline extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+          weekly _week = new weekly();
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                // DialogFragment timePicker = new TimePickerFragment();
                // timePicker.show( getSupportFragmentManager(), "time picker") ;
-
-                sama();
+                weekly _week = new weekly();
+                _week.weekly("Schedule");
+                GotoExamPage();
 
             }
         });
 
-        mListView = (ListView) findViewById(R.id.listView);
+        Button BtnExam = (Button)findViewById(R.id.btnExam);
+        Button BtnTask = (Button)findViewById(R.id.btnTask);
+        BtnExam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                weekly _week = new weekly();
+                _week.weekly("Exam");
+                GotoExamPage();
+            }
+        });
+        BtnTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                weekly _week = new weekly();
+                _week.weekly("Task");
+                GotoExamPage();
+            }
+        });
+        //mListView = (ListView) findViewById(R.id.listView);
         mDatabaseHelper = new DatabaseHelper(this);
 
         populateListView();
 
     }
-
+    private  void GotoExamPage()
+    {
+        Intent in = new Intent(this, weekly.class);
+        startActivity(in);
+    }
     private void populateListView() {
                  Log.d(TAG, "populateListView: Displaying data in the ListView.");
 
@@ -94,7 +117,7 @@ public class dashboard_offline extends AppCompatActivity
                 //create the list adapter and set the adapter
                 ListAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1      , listData  );
 
-                 mListView.setAdapter(adapter);
+                 //mListView.setAdapter(adapter);
 
 
 

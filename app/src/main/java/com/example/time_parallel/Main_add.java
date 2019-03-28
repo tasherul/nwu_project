@@ -119,13 +119,13 @@ implements TimePickerDialog.OnTimeSetListener
          if(B_StartTime)
          {
              TextView textView = (TextView)findViewById(R.id.srt_time_add );
-             textView.setText(hourOfDay+" : "+minute);
+             textView.setText(hourOfDay+":"+minute);
          }
 
          if(B_EndTime)
          {
              TextView textView = (TextView)findViewById(R.id.end_time_add   );
-             textView.setText(hourOfDay+" : "+minute);
+             textView.setText(hourOfDay+":"+minute);
          }
 
     }

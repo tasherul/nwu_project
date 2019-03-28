@@ -19,6 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private  static final String DataBaseName = "TimeParallel.db";
     private static final String TABLE_NAME = "TimeTableManagement";
+
     private static final String ID = "ID";
     private static final String Title = "Title";
     private static final String Discription   =  "Discription";
@@ -76,11 +77,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
      */
     public Cursor getData(){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME;
+        String query = "SELECT * FROM " + TABLE_NAME ;
         Cursor data = db.rawQuery(query, null);
         return data;
     }
-
+    public Cursor getDataByType(String Types){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME +" WHERE Type='" +Types+"'";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
     /**
      * Returns only the ID that matches the name passed in
 
