@@ -4,27 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#07949E"
+   >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+
+        >
 
         <TextView
             android:id="@+id/textView"
             android:gravity="center"
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time Parallel" />
+            android:text="Time Parallel"
+            android:textSize="40sp"
+            android:textColor="#fff"/>
         <TextView
             android:id="@+id/textView1"
             android:gravity="center"
+            android:paddingTop="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The schedule management plan is created as a part of Develop Management Plan process in Integration Management. A project manager must create a schedule management plan and it is observed that in real-world scenarios most of the project managers miss on this important aspect. A schedule management plan should include the methodology used to create the schedule. The project manager should also describe the use of scheduling software. He should identify the measurement guidelines i.e. should he measure the process progress in hours, days, weeks, months or quarters"
+            android:textSize="20sp"
+            android:textAlignment="inherit"
+            android:text="This service will help you to See the time topics for your Schedule."
+            />
+        <TextView
+            android:id="@+id/textView2"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="inherit"
+            android:textStyle="bold"
 
 
+            android:text="** Set Weekly Class **"
+            />
+        <TextView
+            android:id="@+id/textView3"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="inherit"
+            android:textStyle="bold"
+
+
+            android:text="** Set Weekly or date Exam **"
+            />
+        <TextView
+            android:id="@+id/textView4"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="inherit"
+            android:textStyle="bold"
+
+
+            android:text="** set Daily Task **"
+            />
+        <TextView
+            android:id="@+id/textView5"
+            android:gravity="center"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textAlignment="inherit"
+            android:textStyle="bold"
+
+
+            android:text="** See Your Time Schedule **"
             />
 
 
@@ -33,7 +103,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="20dp">
 
 
 
@@ -46,9 +117,12 @@
             <Button
                 android:id="@+id/btnOffline"
 
-                android:layout_width="wrap_content"
-                android:layout_height="60dp"
-                android:text="Open Apps" />
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:text="Open  Apps"
+                 android:drawableBottom="@drawable/open"
+                android:textColor="#AB10CA"
+                android:background="#fff"/>
         </RelativeLayout>
 
 
