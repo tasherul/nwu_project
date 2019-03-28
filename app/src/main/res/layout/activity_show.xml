@@ -5,11 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Show"
-    android:paddingRight="16dp"
-    android:paddingLeft="16dp"
-    android:paddingTop="20dp"
+    android:paddingRight="22dp"
+    android:paddingLeft="50dp"
+    android:paddingTop="70dp"
     android:layout_gravity="center"
-    android:background="@color/design_default_color_primary">
+    android:background="@color/design_default_color_primary"
+    >
 
     <TextView
         android:id="@+id/textView1"
@@ -20,6 +21,7 @@
         android:paddingTop="10dp"
         android:textColor="#fff"
         android:textStyle="bold"
+        android:textSize="25sp"
         />
     <TextView
         android:id="@+id/show_txt2"
@@ -30,6 +32,7 @@
         android:layout_alignParentRight="true"
         android:textStyle="bold"
         android:textColor="#fff"
+        android:textSize="25sp"
 
         />
     <TextView
@@ -126,22 +129,24 @@
         />
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Edit"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/show_txt10"
         android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/edit"
         />
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="80dp"
+        android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Delete"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/show_txt10"
         android:layout_marginTop="30dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="120dp"
+        android:drawableLeft="@drawable/delete"
         />
 
 </RelativeLayout>
