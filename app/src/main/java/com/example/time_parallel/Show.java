@@ -14,7 +14,7 @@ public class Show extends AppCompatActivity {
 
     public static String DataID;
     DatabaseHelper mDatabaseHelper;
-
+    static boolean Schedule;
     public void Show(String ID)
     {
         DataID  = ID;
@@ -58,12 +58,14 @@ public class Show extends AppCompatActivity {
                 Week_or_Date.setText(_Weekly);
                 DayName.setText("Date");
                 Type_For_Goto_page=_Type;
+                Schedule=false;
             }
             else
             {
                 Week_or_Date.setText(_SDate);
                 DayName.setText("Day");
                 Type_For_Goto_page=_Type;
+                Schedule=true;
             }
 
             break;
@@ -72,6 +74,19 @@ public class Show extends AppCompatActivity {
         Button btnEdit,btnDelete;
         btnEdit=(Button)findViewById(R.id.btnEdit);
         btnDelete=(Button)findViewById(R.id.btnDelete);
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MessageShow(Type_For_Goto_page+" "+DataID);
+
+
+                     edit md = new edit();
+                     md.edit( DataID,Type_For_Goto_page);
+                     OpenEditPage();
+
+            }
+        });
 
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,7 +117,17 @@ public class Show extends AppCompatActivity {
 
 
     }
+    public void OpenEditPageSchedul()
+    {
 
+        Intent in = new Intent(this, Main_add.class);
+        startActivity(in);
+    }
+    public  void  OpenEditPage()
+    {
+        Intent in = new Intent(this, edit.class);
+        startActivity(in);
+    }
     public void OpenPageSchdule()
     {
         Intent in = new Intent(this, weekly.class);//Weekly page

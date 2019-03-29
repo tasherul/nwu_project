@@ -17,6 +17,11 @@ import androidx.fragment.app.DialogFragment;
 public class Main_add extends AppCompatActivity
 implements TimePickerDialog.OnTimeSetListener
 {
+    public static String Edit_ID;
+    public void Main_add(String ID)
+    {
+        Edit_ID=ID;
+    }
     Button btnStartTime,btnEndTime,btnBack,btnSave;
     boolean B_StartTime  = false,B_EndTime =false ;
     DatabaseHelper mDatabaseHelper;

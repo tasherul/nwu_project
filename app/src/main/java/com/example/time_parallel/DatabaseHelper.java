@@ -103,19 +103,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
-    /**
-     * Updates the name field
-     * @param newName
-     * @param id
-     * @param oldName
-     */
-    public void updateName(String newName, int id, String oldName){
+
+    public void UpdateData(  String id, String Query){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "UPDATE " + TABLE_NAME + " SET " + Title +
-                " = '" + newName + "' WHERE " + ID + " = '" + id + "'" +
-                " AND " + Title + " = '" + oldName + "'";
+        String query = "UPDATE " + TABLE_NAME + " SET " + Query +
+                " WHERE  ID="  + id ;
         Log.d(TAG, "updateName: query: " + query);
-        Log.d(TAG, "updateName: Setting name to " + newName);
+        //Log.d(TAG, "updateName: Setting name to " + newName);
         db.execSQL(query);
     }
 

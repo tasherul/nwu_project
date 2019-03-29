@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-      android:id="@+id/NavTitle"
-    android:background="@color/design_default_color_primary"
-    tools:context=".Main_add"
+    tools:context=".Main_add_exam"
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
     android:paddingTop="20dp"
-    android:layout_gravity="center">
-
+    android:layout_gravity="center"
+    android:background="@color/design_default_color_primary">
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -23,7 +21,7 @@
         android:textStyle="bold"
         />
     <EditText
-        android:id="@+id/title_add2"
+        android:id="@+id/txtTitle"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:hint="@string/title_add2"
@@ -39,46 +37,59 @@
         android:text="@string/discription"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/title_add2"
+        android:layout_below="@+id/txtTitle"
         android:textColor="#fff"
         android:textStyle="bold"
 
         />
     <EditText
-        android:id="@+id/discription2"
+        android:id="@+id/txtDiscription"
         android:layout_width="200dp"
         android:layout_height="100dp"
         android:hint="@string/discription2"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/title_add2"
+        android:layout_below="@+id/txtTitle"
         android:inputType="textMultiLine"
         android:textColor="#fff"
-
 
         />
     <TextView
         android:id="@+id/weekly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/weekly"
+        android:text="Date :"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/discription2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtDiscription"
         android:textColor="#fff"
         android:textStyle="bold"
 
         />
-
     <Spinner
         android:id="@+id/spinner"
+        android:visibility="invisible"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/discription2"
+        android:layout_below="@+id/txtDiscription"
         android:layout_alignParentRight="true"
         android:layout_marginTop="10dp"
         android:entries="@array/commobox"
         android:textColor="#fff"
         />
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+
+        android:hint="@string/date"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtDiscription"
+        android:textColor="#fff"
+        />
+
+
     <TextView
         android:id="@+id/srt_time"
         android:layout_width="wrap_content"
@@ -88,10 +99,9 @@
         android:layout_marginTop="40dp"
         android:layout_below="@+id/weekly"
         android:textColor="#fff"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold"/>
     <EditText
-        android:id="@+id/srt_time_add"
+        android:id="@+id/txtStartTime"
         android:layout_width="145dp"
         android:layout_height="wrap_content"
         android:hint="@string/srt_time_add"
@@ -100,18 +110,19 @@
         android:inputType="textPersonName"
         android:layout_below="@+id/weekly"
         android:layout_marginTop="30dp"
-        android:enabled="false"
         android:textColor="#fff"
+        android:enabled="false"
         />
 
     <Button
-        android:id="@+id/btnStartTime"
+        android:id="@+id/_btnStartTime"
         android:layout_width="48dp"
         android:layout_height="45dp"
         android:drawableLeft="@drawable/srt_time_img"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/weekly"
         android:layout_marginTop="30dp"
+        android:textColor="#fff"
         />
 
     <TextView
@@ -121,10 +132,9 @@
         android:text="@string/end_time"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="40dp"
-        android:layout_below="@+id/srt_time_add"
+        android:layout_below="@+id/txtStartTime"
         android:textColor="#fff"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/end_time_add"
@@ -134,38 +144,43 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="120dp"
         android:inputType="textPersonName"
-        android:layout_below="@+id/srt_time_add"
+        android:layout_below="@+id/txtStartTime"
         android:layout_marginTop="30dp"
-        android:enabled="false"
         android:textColor="#fff"
+        android:enabled="false"
         />
 
     <Button
-        android:id="@+id/btnEndTime"
+        android:id="@+id/_btnEndTime"
         android:layout_width="48dp"
         android:layout_height="45dp"
         android:drawableLeft="@drawable/end_time"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/srt_time_add"
+        android:layout_below="@+id/txtStartTime"
         android:layout_marginTop="30dp"
-         />
+
+
+        />
     <Button
-        android:id="@+id/btnBack"
+        android:id="@+id/btnUpdate"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="Save"
+        android:text="Update"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/end_time_add"
         android:layout_marginTop="30dp"
         />
     <Button
-        android:id="@+id/btnSave"
-        android:layout_width="100dp"
+        android:id="@+id/btnDashboard"
+        android:layout_width="120dp"
         android:layout_height="50dp"
-        android:text="Back"
+        android:text="Dashboard"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/end_time_add"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="120dp"
         />
+
+
+
 </RelativeLayout>

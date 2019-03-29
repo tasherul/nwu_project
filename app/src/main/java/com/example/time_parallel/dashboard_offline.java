@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -156,8 +155,8 @@ public class dashboard_offline extends AppCompatActivity
 
             @Override
             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                TextView textView = (TextView)findViewById(R.id.textView);
-                textView.setText("H: " + hourOfDay +"M: " + minute);
+                //TextView textView = (TextView)findViewById(R.id.textView);
+                //textView.setText("H: " + hourOfDay +"M: " + minute);
             }
 
             @Override

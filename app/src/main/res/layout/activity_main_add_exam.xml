@@ -100,6 +100,7 @@
         android:layout_below="@+id/weekly"
         android:layout_marginTop="30dp"
         android:textColor="#fff"
+        android:enabled="false"
         />
 
     <Button
@@ -135,6 +136,7 @@
         android:layout_below="@+id/txtStartTime"
         android:layout_marginTop="30dp"
         android:textColor="#fff"
+        android:enabled="false"
         />
 
     <Button
@@ -145,6 +147,8 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/txtStartTime"
         android:layout_marginTop="30dp"
+
+
         />
     <Button
         android:id="@+id/_btnSave"
