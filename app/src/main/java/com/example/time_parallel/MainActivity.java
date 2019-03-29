@@ -1,14 +1,10 @@
 package com.example.time_parallel;
 
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import java.util.Calendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,7 +52,7 @@ btn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         //TimePicker timePickers = findViewById(R.id.timePicker);
-        int hour =0;//  timePickers.getCurrentHour();
+    /*    int hour =0;//  timePickers.getCurrentHour();
         int minute =0;// timePickers.getCurrentMinute();
 
         // Create time.
@@ -76,7 +72,7 @@ btn.setOnClickListener(new View.OnClickListener() {
         // Set alarm.
         // set(type, milliseconds, intent)
         alarm.set(AlarmManager.RTC_WAKEUP, alarmStartTime, alarmIntent);
-
+*/
         //Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show();
           openLogin();
     }

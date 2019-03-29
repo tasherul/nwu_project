@@ -22,6 +22,7 @@ public class edit extends AppCompatActivity
     Button btnUpdate,btnDashboard,btnStartTime,btnEndTime;
     boolean B_StartTime  = false,B_EndTime =false ;
     DatabaseHelper mDatabaseHelper;
+    boolean Week_b,Date_b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,16 +60,17 @@ public class edit extends AppCompatActivity
               StartTime .setText ( data.getString(4));
               EndTime .setText ( data.getString(5));
            // String Type =data.getString(6);
-            String D = data.getString(7);
-            String W = data.getString(3);
-            if(D!=W)
+            String D = data.getString(7).toString();
+            String W = data.getString(3).toString();
+            if(W.length()!=0)
             {
-                Date .setText(D+W);
+                Date .setText( W);
+                Week_b=true;
 
             }
             else
             {
-
+                Week_b=false;
                 Date .setText(D);
             }
 
@@ -104,6 +106,7 @@ public class edit extends AppCompatActivity
             }
         });
     }
+
     private void UpdateData()
     {
         EditText StartTime,EndTime,Title,Discription,Date;
@@ -123,8 +126,16 @@ public class edit extends AppCompatActivity
         if(S_Title.length()!=0 && S_Discription.length()!=0 && S_StartTime.length()!=0 && S_EndTime.length()!=0 && S_ddlDay.length()!=0 )
         {
             //toastMessage(S_ddlDay);
-
-             mDatabaseHelper.UpdateData(ID_Edit,String.format( " Title='%s', Discription='%s', StartTime='%s', Endtime='%s', SDate='%s', Weekly='%s'  ",S_Title,S_Discription,S_StartTime,S_EndTime,S_ddlDay,S_ddlDay ));
+            String Sdate="",SWeek="";
+            if(Week_b)
+            {
+                 SWeek=S_ddlDay;
+            }
+            else
+            {
+                Sdate=S_ddlDay;
+            }
+             mDatabaseHelper.UpdateData(ID_Edit,String.format( " Title='%s', Discription='%s', StartTime='%s', Endtime='%s', SDate='%s', Weekly='%s'  ",S_Title,S_Discription,S_StartTime,S_EndTime,Sdate,SWeek ));
 
                 toastMessage("Successfully Update Data");
 

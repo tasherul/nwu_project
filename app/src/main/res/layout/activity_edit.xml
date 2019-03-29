@@ -166,7 +166,7 @@
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:text="Update"
-        android:layout_alignParentRight="true"
+
         android:layout_below="@+id/end_time_add"
         android:layout_marginTop="30dp"
         />
